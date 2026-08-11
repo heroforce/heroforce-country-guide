@@ -256,8 +256,8 @@
 const WEBHOOK_URL = 'https://formspree.io/f/mkodekbp';
 
 // ── Data ──
-const G = 'https://drive.google.com/uc?export=download&id=';
-const V = '';
+const G = 'https://drive.google.com/file/d/';
+const V = '/view';
 
 const countries = [
   { name:"Argentina",    flag:"🇦🇷", docs:[{name:"Argentina Employment Guide",         type:"Guide",        url:G+"1DDQstAIGsYmE02pJHe8PPLcTS15KfYMq"+V}]},
@@ -556,7 +556,7 @@ document.getElementById('btnSubmit').addEventListener('click', async function() 
     docQueue = [];
 
   } catch(err) {
-    console.error('Submission error:', err);
+    console.error('EmailJS error:', err);
     document.getElementById('sendError').classList.add('show');
     btn.disabled = false;
     document.getElementById('btnLabel').textContent = docQueue.length > 1 ? `Download ${docQueue.length} Guides` : 'Download Guide';
@@ -565,3 +565,4 @@ document.getElementById('btnSubmit').addEventListener('click', async function() 
 </script>
 </body>
 </html>
+
